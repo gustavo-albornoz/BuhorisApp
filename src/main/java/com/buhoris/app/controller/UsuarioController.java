@@ -1,9 +1,15 @@
 package com.buhoris.app.controller;
 
+import com.buhoris.app.DTO.PrestamoDTO;
 import com.buhoris.app.DTO.UsuarioDTO;
+import com.buhoris.app.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 // UsuarioController.java
 @RestController

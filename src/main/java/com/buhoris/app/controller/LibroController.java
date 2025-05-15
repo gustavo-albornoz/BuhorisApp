@@ -1,12 +1,21 @@
 package com.buhoris.app.controller;
 
+import com.buhoris.app.DTO.LibroDTO;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.buhoris.app.service.LibroService;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.validation.Valid;
+import java.util.List;
 
 // LibroController.java
 @RestController
 @RequestMapping("/api/libros")
+
 public class LibroController {
 
     @Autowired
@@ -46,10 +55,14 @@ public class LibroController {
     @GetMapping("/{id}/digital")
     public ResponseEntity<Resource> getLibroDigital(@PathVariable Long id) {
         // Lógica para descargar el PDF
+        ResponseEntity x = null;
+        return x;
     }
 
     @PostMapping("/{id}/digital")
     public ResponseEntity<Void> uploadLibroDigital(@PathVariable Long id, @RequestParam("file") MultipartFile file) {
         // Lógica para subir el PDF
+        ResponseEntity x = null;
+        return x;
     }
 }

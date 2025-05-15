@@ -1,6 +1,9 @@
 package com.buhoris.app.service;
 
+import com.buhoris.app.DTO.LibroDTO;
 import org.springframework.stereotype.Service;
+
+import javax.validation.Valid;
 
 // LibroService.java
 @Service
@@ -28,7 +31,7 @@ public class LibroService {
     }
 
     @Transactional
-    public LibroDTO update(Long id, LibroDTO libroDTO) {
+    public LibroDTO update(Long id, @Valid LibroDTO libroDTO) {
         // Implementación para actualizar un libro
     }
 

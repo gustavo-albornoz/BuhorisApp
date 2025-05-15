@@ -1,10 +1,18 @@
 package com.buhoris.app.controller;
 
 import com.buhoris.app.DTO.PrestamoDTO;
+import com.buhoris.app.DTO.PrestamoRequestDTO;
+import com.buhoris.app.DTO.ReportePrestamosDTO;
+import com.buhoris.app.service.PrestamoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 // PrestamoController.java
 @RestController
@@ -31,8 +39,8 @@ public class PrestamoController {
 
     @GetMapping("/reporte")
     public ResponseEntity<ReportePrestamosDTO> getReportePrestamos(
-            @RequestParam(required = false) LocalDate fechaInicio,
-            @RequestParam(required = false) LocalDate fechaFin) {
+            @RequestParam(required = false) LocalDateTime fechaInicio,
+            @RequestParam(required = false) LocalDateTime fechaFin) {
         return ResponseEntity.ok(prestamoService.generarReportePrestamos(fechaInicio, fechaFin));
     }
 }
