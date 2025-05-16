@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 // PrestamoController.java
@@ -39,8 +38,8 @@ public class PrestamoController {
 
     @GetMapping("/reporte")
     public ResponseEntity<ReportePrestamosDTO> getReportePrestamos(
-            @RequestParam(required = false) LocalDateTime fechaInicio,
-            @RequestParam(required = false) LocalDateTime fechaFin) {
+            @RequestParam(required = false) LocalDate fechaInicio,
+            @RequestParam(required = false) LocalDate fechaFin) {
         return ResponseEntity.ok(prestamoService.generarReportePrestamos(fechaInicio, fechaFin));
     }
 }
